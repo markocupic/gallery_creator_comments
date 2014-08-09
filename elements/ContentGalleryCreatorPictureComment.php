@@ -46,7 +46,7 @@ class ContentGalleryCreatorPictureComment extends \Module
             return $objTemplate->parse();
         }
 
-        if (!strlen(\Input::get('picId'))) return '';
+        if (!strlen(\Input::get('img'))) return '';
 
         return parent::generate();
     }
@@ -57,7 +57,7 @@ class ContentGalleryCreatorPictureComment extends \Module
      */
     protected function compile()
     {
-        $objPicture = \GalleryCreatorPicturesModel::findById(\Input::get('picId'));
+        $objPicture = \GalleryCreatorPicturesModel::findById(\Input::get('img'));
 
         $this->import('Comments');
         $objConfig = new \stdClass();
